@@ -19,3 +19,26 @@ const UserSchema = new mongoose.Schema({
 const Users = new mongoose.model("User", UserSchema)
 
 module.exports = Users
+
+
+const TransactSchema = new mongoose.Schema({
+    Transaction: {type: String, require}, //("income/expense")
+
+    Amount: {type: Number, require},
+
+    Category: {type: String, require},
+
+    Date: {type: String, require},
+
+    User: {type: String, require},
+
+    Description: {type: String, require},
+
+    balance: {type: Number, default: 0}
+}, {timestamps: true})
+
+const Transactions = new mongoose.model("Transact", TransactSchema)
+
+
+
+module.exports = Transactions
